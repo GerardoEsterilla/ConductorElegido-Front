@@ -1,0 +1,17 @@
+export class Cliente {
+    id: Number;
+    nombre: string;
+    apellido: string;
+    fechaNacimiento: Date;
+    cedula: string;
+    email: string;
+
+    constructor(id: Number, nombre: string, apellido: string, fechaNacimiento: Date, cedula: string, email: string) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.cedula = cedula;
+        this.email = email;
+    }
+}
