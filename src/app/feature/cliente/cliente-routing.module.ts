@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ClienteComponent } from './components/cliente/cliente.component';
 import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.component';
 import { ListarClienteComponent } from './components/listar-cliente/listar-cliente.component';
 import { BorrarClienteComponent } from './components/borrar-cliente/borrar-cliente.component';
+import { HomeClienteComponent } from './home-cliente.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ClienteComponent,
+    component: HomeClienteComponent,
     children: [
+      {
+        path: '',
+        component: ClienteComponent
+      },
       {
         path: 'crear',
         component: CrearClienteComponent
@@ -31,4 +36,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ProductoRoutingModule { }
+export class ClienteRoutingModule { }

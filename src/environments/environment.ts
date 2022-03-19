@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  endpoint: '/prospectos-vida'
+  endpoint: '/Conductor_Elegido'
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

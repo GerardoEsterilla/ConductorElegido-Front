@@ -13,7 +13,7 @@ describe('ListarClienteComponent', () => {
   let component: ListarClienteComponent;
   let fixture: ComponentFixture<ListarClienteComponent>;
   let clienteService: ClienteService;
-  const listaProductos: Cliente[] = [new Cliente(1, 'Cliente Front','Apellido',new Date,'cedula','email'), new Cliente(2, 'Cliente Front 2','Apellido 2',new Date(),'cedula 2','email 2')];
+  const listaClientes: Cliente[] = [new Cliente(1, 'Cliente Front','Apellido',new Date,'cedula','email'), new Cliente(2, 'Cliente Front 2','Apellido 2',new Date(),'cedula 2','email 2')];
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -33,7 +33,7 @@ describe('ListarClienteComponent', () => {
     component = fixture.componentInstance;
     clienteService = TestBed.inject(ClienteService);
     spyOn(clienteService, 'consultar').and.returnValue(
-      of(listaProductos)
+      of(listaClientes)
     );
     fixture.detectChanges();
   });

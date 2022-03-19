@@ -9,6 +9,7 @@ import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
 import { ClienteModule } from './feature/cliente/cliente.module';
 import { ConductorModule } from './feature/conductor/conductor.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -24,7 +25,9 @@ import { ConductorModule } from './feature/conductor/conductor.module';
     ProductoModule,
     ClienteModule,
     ConductorModule,
-    CoreModule
+    CoreModule,
+    NgbModule,
+        
   ],
   providers: [CookieService],
     bootstrap: [AppComponent],

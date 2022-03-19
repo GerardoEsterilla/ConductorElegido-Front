@@ -8,15 +8,19 @@
       <th> Fecha Nacimiento </th>
       <th> Cedula </th>
       <th> Email </th>
+      <th> telefono </th>
+      <th> foto </th>
     </thead>
     <tbody>
-      <tr *ngFor="let item of listaClientes | async" >
+      <tr *ngFor="let item of listaConductor | async" >
         <td>{{item.id}}</td> 
         <td>{{item.nombre}}</td>
         <td>{{item.apellido}}</td>
         <td>{{item.fechaNacimiento}}</td>
         <td>{{item.cedula}}</td>
         <td>{{item.email}}</td>
+        <td>{{item.telefono}}</td>
+        <td>{{item.foto}}</td>
       </tr>
     </tbody>
 

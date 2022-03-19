@@ -1,6 +1,10 @@
 :host {
-    flex: 1 1 100%;
+    flex-direction: column;
     display: flex;
     flex-flow: column;
+     
   }
 
+
+  
+    
