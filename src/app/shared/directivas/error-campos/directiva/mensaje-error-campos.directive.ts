@@ -120,6 +120,7 @@ export class MensajeErrorCamposDirective implements OnInit, OnDestroy, AfterView
       this.componente.instance.text = texto;
       this.claseError(true);
     } catch (error) {}
+    /// validar
   }
 
   private claseError(aplicarClase: boolean): void {

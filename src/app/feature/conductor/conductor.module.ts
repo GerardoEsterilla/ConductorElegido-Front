@@ -7,6 +7,7 @@ import { ConductorRoutingModule } from './conductor-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { ConductorService } from './shared/service/conductor.service';
 import { ConductorComponent } from './components/conductor/conductor.component';
+import { ConsultaConductorComponent } from './components/consulta-conductor/consulta-conductor.component';
 
 
 
@@ -16,7 +17,8 @@ import { ConductorComponent } from './components/conductor/conductor.component';
     ListarConductorComponent,
     BorrarConductorComponent,
     ConductorComponent,
-    HomeConductorComponent
+    HomeConductorComponent,
+    ConsultaConductorComponent
   ],
   imports: [
     ConductorRoutingModule,

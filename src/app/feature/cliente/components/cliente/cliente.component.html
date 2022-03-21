@@ -3,9 +3,13 @@
     <h2>Selecciona una opcion</h2>
 
     <div class="groupBotones">
-        <button class="claseboton" routerLink="./crear" routerLinkActive="active">Registrate</button>
-        <button class="claseboton" routerLink="/cliente" routerLinkActive="active">Solicita Servicio</button>
+        <button class="claseboton" (click)="registrarCliente()">Registrate</button>
+        <button class="claseboton"(click)="registrarServicio()">Solicita Servicio</button>
+        <button class="claseboton"(click)="consultarServicio()">Consultar Mis Servicios</button>
+
     </div>
+
+    
   </section>
 
 

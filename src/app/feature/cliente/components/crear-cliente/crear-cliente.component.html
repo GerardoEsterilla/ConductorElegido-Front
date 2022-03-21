@@ -1,26 +1,74 @@
-<h1>Registrar Cliente</h1>
-<form [formGroup]="clienteForm" (ngSubmit)="crear()">
-  <div class="row">
-    <div class="col-sm-2">
-      <label>Id:</label>
+<div class="modal-header">
+  <div class="row w-100">
+    <div class="col-11">
+      <h4 class="modal-title" id="modal-basic-title">Registrar Cliente </h4>    
     </div>
-    <div class="col-sm-4">
-      <input validar type="text" id="idProducto" name="idProducto" placeholder="Id producto" class="form-control"
-        formControlName="id">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-2">
-      <label>Descripción:</label>
-    </div>
-    <div class="col-sm-4">
-      <input validar type="text" id="descripcionProducto" name="descripcion" placeholder="Descripción producto"
-        class="form-control" formControlName="descripcion">
+    <div class="col-1">
+      <span (click)="onCerrar()" class="btn-close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </span>
     </div>
   </div>
+</div>
+
+<div class="modal-body">
+
+  <form [formGroup]="clienteForm" >
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" 
+              class="form-control" 
+              id="nombre" 
+              placeholder="Nombre"
+              validar
+              formControlName="nombre">      
+    </div>
+    
+    <div class="form-group mt-3">
+      <label for="name">Apellido</label>
+      <input type="text" 
+              class="form-control" 
+              id="apellido" 
+              placeholder="Apellido"
+              validar
+              formControlName="apellido">      
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="name">Fecha Nacimiento</label>
+      <input type="text" 
+              class="form-control" 
+              id="fechaNacimiento" 
+              placeholder="Fecha Nacimiento"
+              validar
+              formControlName="fechaNacimiento">      
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="name">Cedula</label>
+      <input type="text" 
+              class="form-control" 
+              id="cedula" 
+              placeholder="Cedula"
+              validar
+              formControlName="cedula">      
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="name">Email</label>
+      <input type="text" 
+              class="form-control" 
+              id="email" 
+              placeholder="Email"
+              validar
+              formControlName="email">      
+    </div>
+
+  </form>
+
+</div>
 
 
-  
-</form>
-
-
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="onGuardar()"> Guardar </button>
+</div>

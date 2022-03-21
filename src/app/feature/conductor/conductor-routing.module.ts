@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ListarServicioComponent } from '@servicio/components/listar-servicio/listar-servicio.component';
 import { BorrarConductorComponent } from './components/borrar-conductor/borrar-conductor.component';
 import { ConductorComponent } from './components/conductor/conductor.component';
 import { CrearConductorComponent } from './components/crear-conductor/crear-conductor.component';
@@ -27,7 +28,11 @@ const routes: Routes = [
       {
         path: 'borrar',
         component: BorrarConductorComponent
-      }
+      },
+      {
+        path: 'servicio',
+        component: ListarServicioComponent
+      },
     ]
   }
 ];

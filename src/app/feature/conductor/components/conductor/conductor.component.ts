@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ConsultaConductorComponent } from '../consulta-conductor/consulta-conductor.component';
+import { CrearConductorComponent } from '../crear-conductor/crear-conductor.component';
 
 
 @Component({
@@ -8,7 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConductorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
+
+
+  registrarConductor(){
+    this.modalService.open(CrearConductorComponent,{
+      backdrop: 'static'
+    })
+  }
+
+  consultarConductor(){
+    this.modalService.open(ConsultaConductorComponent,{
+      backdrop: 'static'
+    })
+
+  }
 
   ngOnInit() {
 

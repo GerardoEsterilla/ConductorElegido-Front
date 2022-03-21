@@ -24,4 +24,8 @@ export class ConductorService {
     return this.http.doDelete<boolean>(`${environment.endpoint}/conductor/${conductor.id}`,
                                                  this.http.optsName('eliminar conductor'));
   }
+
+  public consultarCedula(cedula: String) {
+    return this.http.doGet<Conductor>(`${environment.endpoint}/conductores/${cedula}`, this.http.optsName('consultar conductor por cedula'));
+  }
 }

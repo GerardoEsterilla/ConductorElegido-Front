@@ -7,6 +7,9 @@ import { ClienteRoutingModule } from './cliente-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { ClienteService } from './shared/service/cliente.service';
 import { HomeClienteComponent } from './home-cliente.component';
+import { ConsultaClienteComponent } from './components/consulta-cliente/consulta-cliente.component';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { ConsultarServicioComponent } from './components/consultar-servicio/consultar-servicio.component';
 
 
 
@@ -16,11 +19,14 @@ import { HomeClienteComponent } from './home-cliente.component';
     ListarClienteComponent,
     BorrarClienteComponent,
     ClienteComponent,
-    HomeClienteComponent
+    HomeClienteComponent,
+    ConsultaClienteComponent,
+    ConsultarServicioComponent
   ],
   imports: [
     ClienteRoutingModule,
     SharedModule,
+    NgbNavModule
   ],
   providers: [ClienteService]
   

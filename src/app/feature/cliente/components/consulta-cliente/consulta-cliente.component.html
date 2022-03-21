@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <div class="row w-100">
+      <div class="col-11">
+        <h4 class="modal-title" id="modal-basic-title">Consulta cliente </h4>    
+      </div>
+      <div class="col-1">
+        <span (click)="onCerrar()" class="btn-close">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal-body">
+  
+    <form [formGroup]="consultaForm" >
+      <div class="form-group">
+        <label for="nombre">Cedula</label>
+        <input type="text" 
+                class="form-control" 
+                id="cedula" 
+                placeholder="cedula"
+                validar
+                formControlName="cedula">      
+      </div>
+  
+    </form>
+  
+  </div>
+  
+  
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="onConsultar()"> Consultar </button>
+  </div>

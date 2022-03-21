@@ -10,6 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ClienteModule } from './feature/cliente/cliente.module';
 import { ConductorModule } from './feature/conductor/conductor.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ServicioModule } from './feature/servicio/servicio.module';
 
 
 
@@ -27,6 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ConductorModule,
     CoreModule,
     NgbModule,
+    ServicioModule,
+    
         
   ],
   providers: [CookieService],

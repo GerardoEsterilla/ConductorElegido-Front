@@ -1,9 +1,31 @@
 export class Servicio {
-    id: string;
+    id: number;
+   
+    idCliente: number;
+    origen: String;
+    destino: String;
+    fechaServicio: Date;
     descripcion: string;
+    valor: number;
+    idConductor:number;
 
-    constructor(id: string, descripcion: string) {
+    constructor(id: number, 
+                idCliente: number,
+                origen: String,
+                destino: String,
+                fechaServicio: Date,
+                descripcion: string,
+                valor: number,
+                idConductor:number) {
+
         this.id = id;
+        this.idCliente = idCliente;
+        this.origen = origen;
+        this.destino = destino;
+        this.fechaServicio = fechaServicio;
         this.descripcion = descripcion;
+        this.valor = valor;
+        this.idConductor = idConductor;
+
     }
 }

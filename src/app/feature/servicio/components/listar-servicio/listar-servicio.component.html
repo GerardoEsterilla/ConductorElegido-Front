@@ -1,0 +1,32 @@
+<div id="servicios">
+  <table class="table">
+
+    <thead>
+      <th> ID </th>
+      <th> idCliente </th>
+      <th> idConductor </th>
+      <th> origen </th>
+      <th> destino</th>
+      <th> fechaServicio </th>
+      <th> valor </th>
+      <th> descripcion </th>
+      <th> Opcion </th>
+
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listaServicios | async" >
+        <td>{{item.id}}</td> 
+        <td>{{item.idCliente}}</td>
+        <td>{{item.idConductor}}</td>
+        <td>{{item.origen}}</td>
+        <td>{{item.destino}}</td>
+        <td>{{item.fechaServicio}}</td>
+        <td>{{item.valor}}</td>
+        <td>{{item.descripcion}}</td>
+        <td> <input class="botonAceptar" type="button" value="Aceptar"></td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

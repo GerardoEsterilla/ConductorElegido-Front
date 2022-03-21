@@ -23,6 +23,9 @@
       "@conductor/*": [
         "src/app/feature/conductor/*"
       ],
+      "@servicio/*": [
+        "src/app/feature/servicio/*"
+      ],
       "@shared/*": [
         "src/app/shared/*"
       ]

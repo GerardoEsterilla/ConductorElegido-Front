@@ -25,4 +25,14 @@ export class ClienteService {
     return this.http.doDelete<boolean>(`${environment.endpoint}/cliente/${cliente.id}`,
                                                  this.http.optsName('eliminar cliente'));
   }
+
+
+  public consultarCedula(cedula: String) {
+    return this.http.doGet<Cliente>(`${environment.endpoint}/clientes/${cedula}`, this.http.optsName('consultar cliente por cedula'));
+  }
+
+  
+
+
+
 }
