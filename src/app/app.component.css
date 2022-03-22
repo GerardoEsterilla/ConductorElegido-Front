@@ -1,7 +1,8 @@
 :host {
+    flex-flow: column;
     flex-direction: column;
     display: flex;
-    flex-flow: column;
+    
      
   }
 
