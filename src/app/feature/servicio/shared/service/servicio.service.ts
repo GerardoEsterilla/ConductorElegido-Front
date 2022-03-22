@@ -21,10 +21,6 @@ export class ServicioService {
                                                 this.http.optsName('crear/actualizar servicios'));
   }
 
-  public eliminar(servicio: Servicio) {
-    return this.http.doDelete<boolean>(`${environment.endpoint}/cliente/${servicio.id}`,
-                                                 this.http.optsName('eliminar servicio'));
-  }
 
   public consultarServicios(idCliente: number) {
     return this.http.doGet<Servicio[]>(`${environment.endpoint}/servicios/${idCliente}`, this.http.optsName('consultar servicio por Cliente'));

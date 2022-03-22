@@ -27,7 +27,6 @@ export class ClienteComponent implements OnInit {
   registrarServicio() {
     const modalref = this.modalService.open(ConsultaClienteComponent)
     modalref.componentInstance.emiter.subscribe(data =>{
-      console.log(data);
     const modalref2 =  this.modalService.open(CrearServicioComponent, {
         backdrop: 'static'
       })
@@ -39,7 +38,6 @@ export class ClienteComponent implements OnInit {
   consultarServicio() {
     const modalref = this.modalService.open(ConsultaClienteComponent)
     modalref.componentInstance.emiter.subscribe(data =>{
-      console.log(data);
     const modalref2 =  this.modalService.open(ConsultarServicioComponent, {
         backdrop: 'static'
       })

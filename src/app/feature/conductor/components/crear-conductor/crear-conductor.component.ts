@@ -46,9 +46,8 @@ export class CrearConductorComponent implements OnInit {
   }
   public onGuardar() {
     const conductor: Conductor = this.conductorForm.getRawValue();
-    this.conductorService.guardar(conductor).subscribe( data => {
+    this.conductorService.guardar(conductor).subscribe( () => {
       alert('se creo conductor');
-      console.log(data);
       this.onCerrar();
     },error => alert(error.error.mensaje))
   }

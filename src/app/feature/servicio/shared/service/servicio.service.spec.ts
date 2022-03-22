@@ -6,6 +6,7 @@ import { HttpService } from 'src/app/core/services/http.service';
 import { HttpResponse } from '@angular/common/http';
 import { ServicioService } from './servicio.service';
 import { Servicio } from '../model/servicio';
+import { Cliente } from '@cliente/shared/model/cliente';
 
 describe('ServicioService', () => {
   let httpMock: HttpTestingController;
@@ -40,6 +41,26 @@ describe('ServicioService', () => {
     expect(req.request.method).toBe('GET');
     req.flush(dummyServicios);
   });
+
+
+  it('deberia listar servicios por Id Cliente', () => {
+    const dummyServicios = [
+      new Servicio(1, 1,'Origen','Destino',new Date(),'viaje test'), 
+      new Servicio(2, 1,'Origen 2','Destino 2',new Date(),'viaje test 2'), 
+    ];
+
+    const cliente  = new Cliente(1, 'Cliente Front','Apellido',new Date(),'cedula','email');
+    service.consultarServicios(cliente.id).subscribe(servicios => {
+      expect(servicios.length).toBe(2);
+      expect(servicios).toEqual(dummyServicios);
+    });
+    const apiEndpointServicioId = `${environment.endpoint}/servicios/${cliente.id}`;
+
+    const req = httpMock.expectOne(apiEndpointServicioId);
+    expect(req.request.method).toBe('GET');
+    req.flush(dummyServicios);
+  });
+
 
   it('deberia crear un servicio', () => {
     const dummyServicio = new Servicio(1, 1,'Origen','Destino',new Date(),'viaje test');

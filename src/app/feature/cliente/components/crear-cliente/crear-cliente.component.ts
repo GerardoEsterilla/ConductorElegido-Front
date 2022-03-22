@@ -45,9 +45,8 @@ export class CrearClienteComponent implements OnInit {
 
   public onGuardar() {
     const cliente: Cliente = this.clienteForm.getRawValue();
-    this.clienteService.guardar(cliente).subscribe( data => {
+    this.clienteService.guardar(cliente).subscribe( () => {
       alert('se creo cliente');
-      console.log(data);
       this.onCerrar();
     },error => alert(error.error.mensaje))
   }
