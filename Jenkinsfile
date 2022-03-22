@@ -1,4 +1,4 @@
-@Library('ceiba-jenkins-library') _
+    @Library('ceiba-jenkins-library') _
 pipeline{
 	// any -> tomaria slave 5 u 8
 	// Para mobile se debe especificar el slave -> {label 'Slave_Mac'}
@@ -55,7 +55,7 @@ pipeline{
 
         stage('Test') {
             steps {
-                sh 'npm run test'
+                 sh 'npm run test -- --watch=false --browsers ChromeHeadless'
             }
         }
 
