@@ -15,8 +15,7 @@ export class Servicio {
                 destino: String,
                 fechaServicio: Date,
                 descripcion: string,
-                valor: number,
-                idConductor:number) {
+             ) {
 
         this.id = id;
         this.idCliente = idCliente;
@@ -24,8 +23,6 @@ export class Servicio {
         this.destino = destino;
         this.fechaServicio = fechaServicio;
         this.descripcion = descripcion;
-        this.valor = valor;
-        this.idConductor = idConductor;
 
     }
 }

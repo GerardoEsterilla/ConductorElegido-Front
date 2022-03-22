@@ -1,13 +1,13 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpService } from 'src/app/core/services/http.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CrearServicioComponent } from './crear-servicio.component';
 import { ServicioService } from '../../shared/service/servicio.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ServicioServiceMock } from 'src/test/services/servicio/servicio.service.mock';
 
 describe('CrearServicioComponent', () => {
   let component: CrearServicioComponent;
@@ -24,7 +24,9 @@ describe('CrearServicioComponent', () => {
         ReactiveFormsModule,
         FormsModule
       ],
-      providers: [ServicioService, HttpService],
+      providers: [
+        NgbActiveModal,
+        { provide: ServicioService, useClass: ServicioServiceMock}],
     })
     .compileComponents();
   }));
@@ -47,10 +49,15 @@ describe('CrearServicioComponent', () => {
     expect(component.servicioForm.valid).toBeFalsy();
   });
 
-  it('Registrando producto', () => {
+  it('Registrando servicio', () => {
     expect(component.servicioForm.valid).toBeFalsy();
-    component.servicioForm.controls.id.setValue('001');
-    component.servicioForm.controls.descripcion.setValue('Producto test');
+    component.ngOnInit();
+    component.servicioForm.controls.idCliente.setValue('1');
+    component.servicioForm.controls.origen.setValue('A');
+    component.servicioForm.controls.destino.setValue('B');
+    component.servicioForm.controls.fechaServicio.setValue('2022-03-20 02:00:00');
+    component.servicioForm.controls.descripcion.setValue('Test');
+
     expect(component.servicioForm.valid).toBeTruthy();
 
     component.crear();

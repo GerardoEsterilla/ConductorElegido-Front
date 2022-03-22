@@ -5,9 +5,10 @@ import { CrearClienteComponent } from './crear-cliente.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpService } from 'src/app/core/services/http.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ClienteService } from '../../shared/service/cliente.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ClienteServiceMock } from 'src/test/services/cliente/cliente.service.mock';
 
 describe('CrearClienteComponent', () => {
   let component: CrearClienteComponent;
@@ -24,7 +25,10 @@ describe('CrearClienteComponent', () => {
         ReactiveFormsModule,
         FormsModule
       ],
-      providers: [ClienteService, HttpService],
+      providers: [
+        NgbActiveModal,
+        { provide: ClienteService, useClass: ClienteServiceMock }
+      ],
     })
     .compileComponents();
   }));
@@ -47,10 +51,14 @@ describe('CrearClienteComponent', () => {
     expect(component.clienteForm.valid).toBeFalsy();
   });
 
-  it('Registrando producto', () => {
+  it('Registrando Cliente', () => {
     expect(component.clienteForm.valid).toBeFalsy();
-    component.clienteForm.controls.id.setValue('001');
-    component.clienteForm.controls.descripcion.setValue('Producto test');
+    component.ngOnInit();
+    component.clienteForm.controls.nombre.setValue('Nombre');
+    component.clienteForm.controls.apellido.setValue('Apellido');
+    component.clienteForm.controls.fechaNacimiento.setValue('2022-03-08 19:00:00');
+    component.clienteForm.controls.cedula.setValue('Cedula');
+    component.clienteForm.controls.email.setValue('geadads@124');
     expect(component.clienteForm.valid).toBeTruthy();
 
     component.crear();

@@ -22,7 +22,6 @@ export class ConsultarServicioComponent implements OnInit {
     this.listaServicios= this.servicioService.consultarServicios(this.cliente.id);
   }
 
-
   onCerrar(){
     this.activeModal.close();
   }

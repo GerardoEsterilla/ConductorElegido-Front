@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ConductorService } from '@conductor/shared/service/conductor.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ConductorServiceMock } from 'src/test/services/conductor/conductor.service.mock';
 
 import { ConsultaConductorComponent } from './consulta-conductor.component';
 
@@ -8,7 +12,12 @@ describe('ConsultaConductorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConsultaConductorComponent ]
+      declarations: [ ConsultaConductorComponent  ],
+      providers:[
+        NgbActiveModal,
+        { provide: ConductorService, useClass: ConductorServiceMock}
+      ],
+      imports: [RouterTestingModule.withRoutes([])]
     })
     .compileComponents();
   });

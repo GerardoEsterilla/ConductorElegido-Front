@@ -29,8 +29,8 @@ describe('ServicioService', () => {
 
   it('deberia listar servicios', () => {
     const dummyServicios = [
-      new Servicio(1, 1,'Origen','Destino',new Date(),'viaje test',1,1), 
-      new Servicio(2, 2,'Origen 2','Destino 2',new Date(),'viaje test 2',2,2), 
+      new Servicio(1, 2,'Origen','Destino',new Date(),'viaje test'), 
+      new Servicio(2, 2,'Origen 2','Destino 2',new Date(),'viaje test 2'), 
     ];
     service.consultar().subscribe(servicios => {
       expect(servicios.length).toBe(2);
@@ -42,7 +42,7 @@ describe('ServicioService', () => {
   });
 
   it('deberia crear un servicio', () => {
-    const dummyServicio = new Servicio(1, 1,'Origen','Destino',new Date(),'viaje test',1,1);
+    const dummyServicio = new Servicio(1, 1,'Origen','Destino',new Date(),'viaje test');
     service.guardar(dummyServicio).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
@@ -51,13 +51,5 @@ describe('ServicioService', () => {
     req.event(new HttpResponse<boolean>({body: true}));
   });
 
-  it('deberia eliminar un servicio', () => {
-    const dummyCliente = new Servicio(1, 1,'Origen','Destino',new Date(),'viaje test',1,1);
-    service.eliminar(dummyCliente).subscribe((respuesta) => {
-      expect(respuesta).toEqual(true);
-    });
-    const req = httpMock.expectOne(`${apiEndpointServicio}/1`);
-    expect(req.request.method).toBe('DELETE');
-    req.event(new HttpResponse<boolean>({body: true}));
-  });
+  
 });
