@@ -30,7 +30,6 @@ export class ClienteComponent implements OnInit {
     const modalref2 =  this.modalService.open(CrearServicioComponent, {
         backdrop: 'static'
       })
-      
       modalref2.componentInstance.cliente=data; 
     })
   }
