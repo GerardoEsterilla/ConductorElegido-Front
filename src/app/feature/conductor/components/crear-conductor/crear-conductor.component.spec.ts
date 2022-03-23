@@ -15,6 +15,8 @@ describe('CrearConductorComponent', () => {
   let component: CrearConductorComponent;
   let fixture: ComponentFixture<CrearConductorComponent>;
   let conductorService: ConductorService;
+  let activeModal: NgbActiveModal;
+
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -35,6 +37,7 @@ describe('CrearConductorComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CrearConductorComponent);
     component = fixture.componentInstance;
+    activeModal = TestBed.inject(NgbActiveModal);
     conductorService = TestBed.inject(ConductorService);
     spyOn(conductorService, 'guardar').and.returnValue(
       of(true)
@@ -68,4 +71,16 @@ describe('CrearConductorComponent', () => {
     // Aca validamos el resultado esperado al enviar la petición
     // TODO adicionar expect
   });
+
+  it('Deberia cerrar modal de crear conductor', () => {
+    // Spy on and fake the open function
+    spyOn(activeModal, 'close').and.callFake(() => {
+      // Call the beforeDismiss function to close the dialog
+      return true;
+    });
+    component.onCerrar();
+    // Verify that the dialog was opened
+    expect(activeModal.close).toHaveBeenCalled();
+  });
+
 });

@@ -28,9 +28,6 @@ export class ConsultaClienteComponent implements OnInit {
       this.construirFormularioConsultaCliente();
     }
   
-    crear() {
-      this.clienteService.guardar(this.consultaForm.value);
-    }
   
     private construirFormularioConsultaCliente() {
       this.consultaForm = new FormGroup({

@@ -37,10 +37,9 @@ export class ConsultaConductorComponent implements OnInit {
 
     public onConsultar() {
       const conductor: Conductor = this.consultaForm.getRawValue();
-      this.conductorService.consultarCedula(conductor.cedula).subscribe( (data) => {
-        console.log(data)
-        this.onCerrar(); 
-       this.router.navigate(['/conductor/servicio']);
+      this.conductorService.consultarCedula(conductor.cedula).subscribe( () => {
+      this.onCerrar(); 
+      this.router.navigate(['/conductor/servicio']);
       },error => alert(error.error.mensaje))
 
     }

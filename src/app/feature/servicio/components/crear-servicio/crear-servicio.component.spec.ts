@@ -13,6 +13,7 @@ describe('CrearServicioComponent', () => {
   let component: CrearServicioComponent;
   let fixture: ComponentFixture<CrearServicioComponent>;
   let servicioService: ServicioService;
+  let activeModal: NgbActiveModal;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -34,6 +35,7 @@ describe('CrearServicioComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CrearServicioComponent);
     component = fixture.componentInstance;
+    activeModal = TestBed.inject(NgbActiveModal);
     servicioService = TestBed.inject(ServicioService);
     spyOn(servicioService, 'guardar').and.returnValue(
       of(true)
@@ -65,4 +67,16 @@ describe('CrearServicioComponent', () => {
     // Aca validamos el resultado esperado al enviar la petición
     // TODO adicionar expect
   });
+
+  it('Deberia cerrar modal de crear servicio', () => {
+    // Spy on and fake the open function
+    spyOn(activeModal, 'close').and.callFake(() => {
+      // Call the beforeDismiss function to close the dialog
+      return true;
+    });
+    component.onCerrar();
+    // Verify that the dialog was opened
+    expect(activeModal.close).toHaveBeenCalled();
+  });
+
 });

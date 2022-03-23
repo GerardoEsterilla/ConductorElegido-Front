@@ -21,7 +21,6 @@ export class CrearServicioComponent implements OnInit {
 
   ngOnInit() {
     this.construirFormularioServicio();
-    console.log(this.cliente);
   }
 
   onCerrar(){
