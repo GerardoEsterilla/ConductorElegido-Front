@@ -47,7 +47,7 @@ describe('ClienteComponent', () => {
     // Spy on and fake the open function
     spyOn(modalService, 'open').and.callFake(() => {
       // Call the beforeDismiss function to close the dialog
-      return <NgbModalRef>({ componentInstance: new CrearClienteComponent(null, null) })
+      return <NgbModalRef> ({ componentInstance: new CrearClienteComponent(null, null) });
     });
     component.registrarCliente();
     // Verify that the dialog was opened
@@ -59,7 +59,7 @@ describe('ClienteComponent', () => {
     // Spy on and fake the open function
     spyOn(modalService, 'open').and.callFake(() => {
       // Call the beforeDismiss function to close the dialog
-      return <NgbModalRef>({ componentInstance: new ConsultaClienteComponent(null, null) })
+      return <NgbModalRef>({componentInstance: new ConsultaClienteComponent(null, null) });
     });
     component.registrarServicio();
     // Verify that the dialog was opened
@@ -70,7 +70,7 @@ describe('ClienteComponent', () => {
     // Spy on and fake the open function
     spyOn(modalService, 'open').and.callFake(() => {
       // Call the beforeDismiss function to close the dialog
-      return <NgbModalRef>({ componentInstance: new ConsultaClienteComponent(null, null) })
+      return <NgbModalRef>({componentInstance: new ConsultaClienteComponent(null, null)});
     });
     //Revisar T.E.S.T.I.N.G para analizar la implemetacion de dos modales//
     component.consultarServicio();

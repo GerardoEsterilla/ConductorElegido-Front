@@ -28,7 +28,6 @@ import { ConsultarServicioComponent } from './components/consultar-servicio/cons
     SharedModule,
     NgbNavModule
   ],
-  providers: [ClienteService]
-  
+  providers: [ClienteService],
 })
 export class ClienteModule { }

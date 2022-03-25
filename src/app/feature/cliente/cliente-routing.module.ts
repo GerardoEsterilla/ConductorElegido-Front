@@ -28,7 +28,6 @@ const routes: Routes = [
         path: 'servicio',
         component: CrearServicioComponent
       },
-      
     ]
   }
 ];

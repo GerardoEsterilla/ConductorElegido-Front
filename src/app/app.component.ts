@@ -9,7 +9,7 @@ import { ServicioService } from './feature/servicio/shared/service/servicio.serv
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ClienteService,ConductorService,ServicioService]
+  providers: [ClienteService, ConductorService, ServicioService]
 })
 export class AppComponent {
   title = 'app-base';
@@ -18,9 +18,7 @@ export class AppComponent {
     { url: '/producto', nombre: 'producto' },
     { url: '/cliente',  nombre: 'cliente'},
     { url: '/conductor',  nombre: 'conductor'},
-    { url: '/servicio',  nombre: 'servicio'}
+    { url: '/servicio',  nombre: 'servicio'},
   ];
-  
-
-  
 }
+

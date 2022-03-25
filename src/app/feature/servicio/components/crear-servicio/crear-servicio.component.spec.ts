@@ -52,8 +52,6 @@ describe('CrearServicioComponent', () => {
   });
 
   it('Registrando servicio', () => {
-    expect(component.servicioForm.valid).toBeFalsy();
-    component.ngOnInit();
     component.servicioForm.controls.idCliente.setValue('1');
     component.servicioForm.controls.origen.setValue('A');
     component.servicioForm.controls.destino.setValue('B');

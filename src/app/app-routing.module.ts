@@ -6,11 +6,11 @@ import { HomeComponent } from '@home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, canActivate: [SecurityGuard]  },
+  { path: 'home', component: HomeComponent, canActivate: [SecurityGuard] },
   { path: 'producto', loadChildren: () => import('@producto/producto.module').then(mod => mod.ProductoModule) },
   { path: 'cliente', loadChildren: () => import('@cliente/cliente.module').then(mod => mod.ClienteModule) },
-  { path: 'conductor', loadChildren:() => import('@conductor/conductor.module').then(mod => mod.ConductorModule)},
-  { path: 'servicio', loadChildren:() => import('@servicio/servicio.module').then(mod => mod.ServicioModule)}
+  { path: 'conductor', loadChildren: () => import('@conductor/conductor.module').then(mod => mod.ConductorModule) },
+  { path: 'servicio', loadChildren: () => import('@servicio/servicio.module').then(mod => mod.ServicioModule) }
 
 ];
 
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { } 
+export class AppRoutingModule { }

@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './borrar-cliente.component.html',
   styleUrls: ['./borrar-cliente.component.css']
 })
+
 export class BorrarClienteComponent implements OnInit { 
 
 

@@ -28,9 +28,7 @@ import { ServicioModule } from './feature/servicio/servicio.module';
     ConductorModule,
     CoreModule,
     NgbModule,
-    ServicioModule,
-    
-        
+    ServicioModule,  
   ],
   providers: [CookieService],
     bootstrap: [AppComponent],
