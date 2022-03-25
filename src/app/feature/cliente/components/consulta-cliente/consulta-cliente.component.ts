@@ -41,7 +41,7 @@ export class ConsultaClienteComponent implements OnInit {
       this.clienteService.consultarCedula(cliente.cedula).subscribe( data => {
         this.emiter.emit(data);
         this.onCerrar();
-      },error => alert(error.error.mensaje))
+      },error => alert(error.error.mensaje));
     }
 
 }

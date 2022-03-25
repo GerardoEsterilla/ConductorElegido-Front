@@ -27,7 +27,7 @@ export class ClienteService {
   }
 
 
-  public consultarCedula(cedula: String) {
+  public consultarCedula(cedula: string) {
     return this.http.doGet<Cliente>(`${environment.endpoint}/clientes/${cedula}`, this.http.optsName('consultar cliente por cedula'));
   }
 

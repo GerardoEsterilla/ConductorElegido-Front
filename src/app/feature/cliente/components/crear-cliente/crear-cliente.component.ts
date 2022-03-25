@@ -48,7 +48,7 @@ export class CrearClienteComponent implements OnInit {
     this.clienteService.guardar(cliente).subscribe( () => {
       alert('se creo cliente');
       this.onCerrar();
-    },error => alert(error.error.mensaje))
+    },error => alert(error.error.mensaje));
   }
 
 }

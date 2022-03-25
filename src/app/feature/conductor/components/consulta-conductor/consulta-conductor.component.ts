@@ -40,7 +40,7 @@ export class ConsultaConductorComponent implements OnInit {
       this.conductorService.consultarCedula(conductor.cedula).subscribe( () => {
       this.onCerrar(); 
       this.router.navigate(['/conductor/servicio']);
-      },error => alert(error.error.mensaje))
+      },error => alert(error.error.mensaje));
 
     }
 

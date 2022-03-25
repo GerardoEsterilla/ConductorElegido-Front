@@ -1,5 +1,5 @@
 export class Conductor {
-    id: Number;
+    id: number;
     nombre: string;
     apellido: string;
     fechaNacimiento: Date;
@@ -8,7 +8,7 @@ export class Conductor {
     telefono: string;
     foto: string;
 
-    constructor(    id: Number, 
+    constructor(    id: number, 
                     nombre: string, 
                     apellido: string, 
                     fechaNacimiento: Date, 

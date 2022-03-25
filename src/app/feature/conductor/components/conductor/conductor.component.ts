@@ -17,14 +17,13 @@ export class ConductorComponent implements OnInit {
   registrarConductor(){
     this.modalService.open(CrearConductorComponent,{
       backdrop: 'static'
-    })
+    });
   }
 
   consultarConductor(){
     this.modalService.open(ConsultaConductorComponent,{
       backdrop: 'static'
-    })
-
+    });
   }
 
   ngOnInit() {

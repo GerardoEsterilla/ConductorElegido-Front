@@ -2,8 +2,8 @@ export class Servicio {
     id: number;
    
     idCliente: number;
-    origen: String;
-    destino: String;
+    origen: string;
+    destino: string;
     fechaServicio: Date;
     descripcion: string;
     valor: number;
@@ -11,8 +11,8 @@ export class Servicio {
 
     constructor(id: number, 
                 idCliente: number,
-                origen: String,
-                destino: String,
+                origen: string,
+                destino: string,
                 fechaServicio: Date,
                 descripcion: string,
              ) {

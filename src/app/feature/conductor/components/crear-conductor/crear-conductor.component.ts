@@ -49,7 +49,7 @@ export class CrearConductorComponent implements OnInit {
     this.conductorService.guardar(conductor).subscribe( () => {
       alert('se creo conductor');
       this.onCerrar();
-    },error => alert(error.error.mensaje))
+    },error => alert(error.error.mensaje));
   }
 
 

@@ -51,7 +51,7 @@ export class CrearServicioComponent implements OnInit {
     this.servicioService.guardar(servicio).subscribe( () => {
       alert('se creo servicio');
       this.onCerrar();
-    },error => alert(error.error.mensaje))
+    },error => alert(error.error.mensaje));
   }
 
 }

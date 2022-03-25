@@ -61,7 +61,7 @@ describe('workspace-project Servicio', () => {
         cliente.ingresarCedula(CEDULA);
         cliente.clickBotonConsultaCedula();
         expect(CEDULA).toEqual('11111');
-        expect(10).toBe(servicio.contarServicios());
+        expect(2).toBe(servicio.contarServicios());
     });
 
 
@@ -75,7 +75,7 @@ describe('workspace-project Servicio', () => {
         conductor.ingresarCedula(CEDULA);
         conductor.clickBotonConsultaCedula();
         expect(CEDULA).toEqual('11111');
-        expect(11).toBe(servicio.contarServicios());
+        expect(2).toBe(servicio.contarServicios());
     });
 
 
