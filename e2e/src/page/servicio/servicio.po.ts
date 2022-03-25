@@ -5,8 +5,6 @@ export class ServicioPage {
     private linkSolicitarServicio = element(by.id('linkSolicitarServicio'));
     private linkConsultaCedula = element(by.id('linkConsultaCedula'));
     private linkGuardarServicio = element(by.id('linkGuardarServicio'));
-    
-
 
     private inputOrigenServicio = element(by.id('origen'));
     private inputDestinoServicio = element(by.id('destino'));
@@ -49,6 +47,6 @@ export class ServicioPage {
     async contarServicios() {
         return this.listaServicios.count();
     }
-    
+
 
 }

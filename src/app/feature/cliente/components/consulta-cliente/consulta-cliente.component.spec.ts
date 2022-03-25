@@ -13,13 +13,13 @@ describe('ConsultaClienteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConsultaClienteComponent ],
-      providers:[
+      declarations: [ConsultaClienteComponent],
+      providers: [
         NgbActiveModal,
-        { provide: ClienteService, useClass: ClienteServiceMock},     
+        { provide: ClienteService, useClass: ClienteServiceMock },
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -36,8 +36,5 @@ describe('workspace-project Cliente', () => {
         // expect(<>).toEqual(<>);
     });
 
-
-   
-
-    
 });
+

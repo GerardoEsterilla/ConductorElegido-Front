@@ -5,13 +5,12 @@ import { of } from 'rxjs';
 @Injectable()
 export class ClienteServiceMock {
 
-  constructor() {}
+  constructor() { }
 
 
   public consultar() {
     of({});
   }
-  
 
   public guardar(cliente: Cliente) {
     of(cliente);
@@ -22,11 +21,11 @@ export class ClienteServiceMock {
   }
 
 
-  public consultarCedula(cedula: String) {
+  public consultarCedula(cedula: string) {
     of(cedula);
   }
 
-  
+
 
 
 

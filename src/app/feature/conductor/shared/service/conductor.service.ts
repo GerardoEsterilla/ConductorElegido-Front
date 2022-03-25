@@ -26,6 +26,7 @@ export class ConductorService {
   }
 
   public consultarCedula(cedula: string) {
-    return this.http.doGet<Conductor>(`${environment.endpoint}/conductores/${cedula}`, this.http.optsName('consultar conductor por cedula'));
+    return this.http.doGet<Conductor>(  `${environment.endpoint}/conductores/${cedula}`,
+                                        this.http.optsName('consultar conductor por cedula'));
   }
 }

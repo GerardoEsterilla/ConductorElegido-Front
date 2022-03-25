@@ -18,30 +18,28 @@ export class ConsultaClienteComponent implements OnInit {
   emiter = new EventEmitter();
 
   constructor(protected clienteService: ClienteService,
-    private activeModal: NgbActiveModal) { }
+              private activeModal: NgbActiveModal) { }
 
     onCerrar(){
       this.activeModal.close();
     }
-  
+
     ngOnInit() {
       this.construirFormularioConsultaCliente();
     }
-  
-  
-    private construirFormularioConsultaCliente() {
+
+    private construirFormularioConsultaCliente(){
       this.consultaForm = new FormGroup({
-         cedula: new FormControl('',[Validators.required,Validators.minLength(LONGITUD_MINIMA_PERMITIDA_TEXTO)]),
-                                     
-      });
+         cedula: new FormControl('', [Validators.required, Validators.minLength(LONGITUD_MINIMA_PERMITIDA_TEXTO)]),
+              });
     }
-  
+
     public onConsultar() {
       const cliente: Cliente = this.consultaForm.getRawValue();
       this.clienteService.consultarCedula(cliente.cedula).subscribe( data => {
         this.emiter.emit(data);
         this.onCerrar();
-      },error => alert(error.error.mensaje));
+      }, error => alert(error.error.mensaje));
     }
 
 }

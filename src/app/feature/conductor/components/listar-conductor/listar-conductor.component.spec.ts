@@ -13,7 +13,8 @@ describe('ListarConductorComponent', () => {
   let component: ListarConductorComponent;
   let fixture: ComponentFixture<ListarConductorComponent>;
   let conductorService: ConductorService;
-  const listaConductor: Conductor[] = [new Conductor(1, 'Cliente Front','Apellido',new Date,'cedula','email','12','12'), new Conductor(2, 'Cliente Front 2','Apellido 2',new Date(),'cedula 2','email 2','telefono 2','foto 2')];
+  const listaConductor: Conductor[] = [ new Conductor(1, 'Conductor Front', 'Apellido', new Date(), 'cedula', 'email', '12', '12'),
+                                        new Conductor(2, 'Conductor Front 2', 'Apellido 2', new Date(), 'cedula 2', 'email 2', 'telefono 2', 'foto 2')];
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -42,7 +43,7 @@ describe('ListarConductorComponent', () => {
     expect(component).toBeTruthy();
     component.listaConductor.subscribe(resultado => {
       expect(2).toBe(resultado.length);
+    });
   });
-});
 
 });

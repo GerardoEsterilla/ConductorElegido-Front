@@ -24,8 +24,7 @@ describe('ConsultarServicioComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ConsultarServicioComponent);
     component = fixture.componentInstance;
-    component.cliente = new Cliente(1, 'Cliente Front','Apellido',new Date,'cedula','email');
-
+    component.cliente = new Cliente(1, 'Cliente Front', 'Apellido', new Date(), 'cedula', 'email');
     fixture.detectChanges();
   });
 

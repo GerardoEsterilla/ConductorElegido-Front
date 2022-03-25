@@ -29,7 +29,8 @@ describe('ClienteService', () => {
 
   it('deberia listar clientes', () => {
     const dummyClientes = [
-      new Cliente(1, 'Cliente Front','Apellido',new Date(),'cedula','email'), new Cliente(2, 'Cliente Front 2','Apellido 2',new Date(),'cedula 2','email 2')
+      new Cliente(1, 'Cliente Front', 'Apellido', new Date(), 'cedula', 'email'),
+      new Cliente(2, 'Cliente Front 2', 'Apellido 2', new Date(), 'cedula 2', 'email 2')
     ];
     service.consultar().subscribe(clientes => {
       expect(clientes.length).toBe(2);
@@ -41,22 +42,22 @@ describe('ClienteService', () => {
   });
 
   it('deberia crear un cliente', () => {
-    const dummyCliente = new Cliente(1, 'Cliente Front','Apellido',new Date,'cedula','email');
+    const dummyCliente = new Cliente(1, 'Cliente Front', 'Apellido', new Date(), 'cedula', 'email');
     service.guardar(dummyCliente).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
     const req = httpMock.expectOne(apiEndpointClientes);
     expect(req.request.method).toBe('POST');
-    req.event(new HttpResponse<boolean>({body: true}));
+    req.event(new HttpResponse<boolean>({ body: true }));
   });
 
   it('deberia eliminar un cliente', () => {
-    const dummyCliente = new Cliente(1, 'Cliente Front','Apellido',new Date,'cedula','email');
+    const dummyCliente = new Cliente(1, 'Cliente Front', 'Apellido', new Date(), 'cedula', 'email');
     service.eliminar(dummyCliente).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
     const req = httpMock.expectOne(`${apiEndpointClientes}/1`);
     expect(req.request.method).toBe('DELETE');
-    req.event(new HttpResponse<boolean>({body: true}));
+    req.event(new HttpResponse<boolean>({ body: true }));
   });
 });

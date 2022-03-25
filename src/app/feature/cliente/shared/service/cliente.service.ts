@@ -14,7 +14,6 @@ export class ClienteService {
   public consultar() {
     return this.http.doGet<Cliente[]>(`${environment.endpoint}/clientes`, this.http.optsName('consultar clientes'));
   }
-  
 
   public guardar(cliente: Cliente) {
     return this.http.doPost<Cliente, boolean>(`${environment.endpoint}/cliente`, cliente,
@@ -26,13 +25,9 @@ export class ClienteService {
                                                  this.http.optsName('eliminar cliente'));
   }
 
-
   public consultarCedula(cedula: string) {
     return this.http.doGet<Cliente>(`${environment.endpoint}/clientes/${cedula}`, this.http.optsName('consultar cliente por cedula'));
   }
-
-  
-
 
 
 }

@@ -15,7 +15,7 @@ describe('ConsultaConductorComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ConsultaConductorComponent  ],
-      providers:[
+      providers: [
         NgbActiveModal,
         { provide: ConductorService, useClass: ConductorServiceMock}
       ],

@@ -23,7 +23,7 @@ export class ConductorServiceMock {
     return of({conductor});
    }
 
-  public consultarCedula(cedula: String) {
+  public consultarCedula(cedula: string) {
     return of({cedula});
   }
 }

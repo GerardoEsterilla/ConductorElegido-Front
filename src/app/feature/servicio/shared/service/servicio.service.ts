@@ -14,7 +14,6 @@ export class ServicioService {
   public consultar() {
     return this.http.doGet<Servicio[]>(`${environment.endpoint}/servicios`, this.http.optsName('consultar servicios'));
   }
-  
 
   public guardar(servicio: Servicio) {
     return this.http.doPost<Servicio, boolean>(`${environment.endpoint}/servicio`, servicio,
@@ -23,6 +22,7 @@ export class ServicioService {
 
 
   public consultarServicios(idCliente: number) {
-    return this.http.doGet<Servicio[]>(`${environment.endpoint}/servicios/${idCliente}`, this.http.optsName('consultar servicio por Cliente'));
+    return  this.http.doGet<Servicio[]>(`${environment.endpoint}/servicios/${idCliente}`,
+            this.http.optsName('consultar servicio por Cliente'));
   }
 }

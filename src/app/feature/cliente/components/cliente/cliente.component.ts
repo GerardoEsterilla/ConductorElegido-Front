@@ -26,21 +26,21 @@ export class ClienteComponent implements OnInit {
 
   registrarServicio() {
     const modalref = this.modalService.open(ConsultaClienteComponent);
-    modalref.componentInstance.emiter.subscribe(data=>{
-    const modalref2 =  this.modalService.open(CrearServicioComponent, {
+    modalref.componentInstance.emiter.subscribe(data => {
+      const modalref2 = this.modalService.open(CrearServicioComponent, {
         backdrop: 'static'
       });
-    modalref2.componentInstance.cliente=data; 
+      modalref2.componentInstance.cliente = data;
     });
   }
 
   consultarServicio() {
     const modalref = this.modalService.open(ConsultaClienteComponent);
-    modalref.componentInstance.emiter.subscribe(data=>{
-    const modalref2 =  this.modalService.open(ConsultarServicioComponent, {
+    modalref.componentInstance.emiter.subscribe(data => {
+      const modalref2 = this.modalService.open(ConsultarServicioComponent, {
         backdrop: 'static'
-      });  
-    modalref2.componentInstance.cliente=data; 
+      });
+      modalref2.componentInstance.cliente = data;
     });
   }
 

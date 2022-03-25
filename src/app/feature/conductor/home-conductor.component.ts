@@ -12,9 +12,6 @@ export class HomeConductorComponent implements OnInit {
 
   ngOnInit() {
 
-
   }
-
-  
 
 }

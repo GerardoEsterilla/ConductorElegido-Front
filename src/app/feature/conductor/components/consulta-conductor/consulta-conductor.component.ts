@@ -14,37 +14,32 @@ const LONGITUD_MINIMA_PERMITIDA_TEXTO = 3;
 })
 export class ConsultaConductorComponent implements OnInit {
   consultaForm: FormGroup;
- 
   constructor(protected conductorService: ConductorService,
-              private activeModal: NgbActiveModal, 
+              private activeModal: NgbActiveModal,
               private router: Router) { }
 
 
-  onCerrar(){
-      this.activeModal.close();
-    }
+  onCerrar() {
+    this.activeModal.close();
+  }
 
   ngOnInit() {
-      this.construirFormularioConsultaConductor();
-    }
+    this.construirFormularioConsultaConductor();
+  }
 
-    private construirFormularioConsultaConductor() {
-      this.consultaForm = new FormGroup({
-         cedula: new FormControl('',[Validators.required,Validators.minLength(LONGITUD_MINIMA_PERMITIDA_TEXTO)]),
-                                     
-      });
-    }
+  private construirFormularioConsultaConductor() {
+    this.consultaForm = new FormGroup({
+      cedula: new FormControl('', [Validators.required, Validators.minLength(LONGITUD_MINIMA_PERMITIDA_TEXTO)]),
+    });
+  }
 
-    public onConsultar() {
-      const conductor: Conductor = this.consultaForm.getRawValue();
-      this.conductorService.consultarCedula(conductor.cedula).subscribe( () => {
-      this.onCerrar(); 
+  public onConsultar() {
+    const conductor: Conductor = this.consultaForm.getRawValue();
+    this.conductorService.consultarCedula(conductor.cedula).subscribe(() => {
+      this.onCerrar();
       this.router.navigate(['/conductor/servicio']);
-      },error => alert(error.error.mensaje));
+    }, error => alert(error.error.mensaje));
 
-    }
-
-
-
+  }
 
 }

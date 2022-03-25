@@ -10,12 +10,11 @@ export class ServicioComponent implements OnInit {
 
   constructor() { }
 
-  
   ngOnInit() {
 
 
   }
 
-  
+
 
 }

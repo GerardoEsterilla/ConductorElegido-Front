@@ -30,7 +30,7 @@ describe('ConductorService', () => {
 
   it('deberia listar conductores', () => {
     const dummyConductor = [
-      new Conductor(1, 'Conductor Front','Apellido',new Date(),'cedula','email','1234','1234'), new Conductor(2, 'Conductor Front 2','Apellido 2',new Date(),'cedula 2','email 2','1234','1234')
+      new Conductor(1, 'Conductor Front', 'Apellido', new Date(), 'cedula', 'email', '1234', '1234'), new Conductor(2, 'Conductor Front 2', 'Apellido 2', new Date(), 'cedula 2', 'email 2', '1234', '1234')
     ];
     service.consultar().subscribe(conductor => {
       expect(conductor.length).toBe(2);
@@ -42,22 +42,22 @@ describe('ConductorService', () => {
   });
 
   it('deberia crear un conductor', () => {
-    const dummyConductor = new Conductor(1, 'Conductor Front','Apellido',new Date(),'cedula','email','1234','1234');
+    const dummyConductor = new Conductor(1, 'Conductor Front', 'Apellido', new Date(), 'cedula', 'email', '1234', '1234');
     service.guardar(dummyConductor).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
     const req = httpMock.expectOne(apiEndpointConductor);
     expect(req.request.method).toBe('POST');
-    req.event(new HttpResponse<boolean>({body: true}));
+    req.event(new HttpResponse<boolean>({ body: true }));
   });
 
   it('deberia eliminar un conductor', () => {
-    const dummyConductor = new Conductor(1, 'Conductor Front','Apellido',new Date(),'cedula','email','1234','1234');
+    const dummyConductor = new Conductor(1, 'Conductor Front', 'Apellido', new Date(), 'cedula', 'email', '1234', '1234');
     service.eliminar(dummyConductor).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
     const req = httpMock.expectOne(`${apiEndpointConductor}/1`);
     expect(req.request.method).toBe('DELETE');
-    req.event(new HttpResponse<boolean>({body: true}));
+    req.event(new HttpResponse<boolean>({ body: true }));
   });
 });

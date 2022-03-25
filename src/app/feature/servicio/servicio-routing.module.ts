@@ -23,7 +23,7 @@ const routes: Routes = [
         path: 'listar',
         component: ListarServicioComponent
       },
-      
+
     ]
   }
 ];

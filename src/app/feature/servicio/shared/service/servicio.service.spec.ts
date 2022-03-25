@@ -29,9 +29,8 @@ describe('ServicioService', () => {
   });
 
   it('deberia listar servicios', () => {
-    const dummyServicios = [
-      new Servicio(1, 2,'Origen','Destino',new Date(),'viaje test'), 
-      new Servicio(2, 2,'Origen 2','Destino 2',new Date(),'viaje test 2'), 
+    const dummyServicios = [new Servicio(1, 2, 'Origen', 'Destino', new Date(), 'viaje test'),
+                            new Servicio(2, 2, 'Origen 2', 'Destino 2', new Date(), 'viaje test 2'),
     ];
     service.consultar().subscribe(servicios => {
       expect(servicios.length).toBe(2);
@@ -45,11 +44,11 @@ describe('ServicioService', () => {
 
   it('deberia listar servicios por Id Cliente', () => {
     const dummyServicios = [
-      new Servicio(1, 1,'Origen','Destino',new Date(),'viaje test'), 
-      new Servicio(2, 1,'Origen 2','Destino 2',new Date(),'viaje test 2'), 
+      new Servicio(1, 1, 'Origen', 'Destino', new Date(), 'viaje test'),
+      new Servicio(2, 1, 'Origen 2', 'Destino 2', new Date(), 'viaje test 2'),
     ];
 
-    const cliente  = new Cliente(1, 'Cliente Front','Apellido',new Date(),'cedula','email');
+    const cliente = new Cliente(1, 'Cliente Front', 'Apellido', new Date(), 'cedula', 'email');
     service.consultarServicios(cliente.id).subscribe(servicios => {
       expect(servicios.length).toBe(2);
       expect(servicios).toEqual(dummyServicios);
@@ -63,14 +62,14 @@ describe('ServicioService', () => {
 
 
   it('deberia crear un servicio', () => {
-    const dummyServicio = new Servicio(1, 1,'Origen','Destino',new Date(),'viaje test');
+    const dummyServicio = new Servicio(1, 1, 'Origen', 'Destino', new Date(), 'viaje test');
     service.guardar(dummyServicio).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
     const req = httpMock.expectOne(apiEndpointServicio);
     expect(req.request.method).toBe('POST');
-    req.event(new HttpResponse<boolean>({body: true}));
+    req.event(new HttpResponse<boolean>({ body: true }));
   });
 
-  
+
 });

@@ -12,14 +12,13 @@ import { Observable } from 'rxjs';
 })
 export class ConsultarServicioComponent implements OnInit {
   public listaServicios: Observable<Servicio[]>;
-  cliente : Cliente;
- 
+  cliente: Cliente;
 
   constructor(protected servicioService: ServicioService,
               private activeModal: NgbActiveModal) { }
 
   ngOnInit() {
-    this.listaServicios= this.servicioService.consultarServicios(this.cliente.id);
+    this.listaServicios = this.servicioService.consultarServicios(this.cliente.id);
   }
 
   onCerrar(){

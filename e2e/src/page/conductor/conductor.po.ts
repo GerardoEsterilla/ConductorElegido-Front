@@ -53,6 +53,4 @@ export class ConductorPage {
     async ingresarFoto(fotoConductor) {
         await this.inputFotoConductor.sendKeys(fotoConductor);
     }
-
-    
 }

@@ -18,7 +18,7 @@ describe('workspace-project Conductor', () => {
         const CEDULA = 'Cedula';
         const EMAIL = 'geadads@124';
         const TELEFONO = 'telefono';
-        const FOTO= 'foto';
+        const FOTO = 'foto';
 
         page.navigateTo();
         page.getConductorButton().click();
@@ -45,7 +45,4 @@ describe('workspace-project Conductor', () => {
     });
 
 
-   
-
-    
 });

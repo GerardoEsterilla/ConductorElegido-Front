@@ -14,23 +14,20 @@ export class ConductorComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
 
 
-  registrarConductor(){
-    this.modalService.open(CrearConductorComponent,{
+  registrarConductor() {
+    this.modalService.open(CrearConductorComponent, {
       backdrop: 'static'
     });
   }
 
-  consultarConductor(){
-    this.modalService.open(ConsultaConductorComponent,{
+  consultarConductor() {
+    this.modalService.open(ConsultaConductorComponent, {
       backdrop: 'static'
     });
   }
 
   ngOnInit() {
 
-
   }
-
-  
 
 }

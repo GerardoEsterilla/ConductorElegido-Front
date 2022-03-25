@@ -22,7 +22,7 @@ describe('ConductorComponent', () => {
         HttpClientModule,
         RouterTestingModule,
         NgbModalModule
-      ], 
+      ],
       providers: [{ provide: ConductorService, useClass: ConductorServiceMock }]
     })
       .compileComponents();
@@ -46,7 +46,7 @@ describe('ConductorComponent', () => {
     // Spy on and fake the open function
     spyOn(modalService, 'open').and.callFake(() => {
       // Call the beforeDismiss function to close the dialog
-      return <NgbModalRef>({ componentInstance: new CrearConductorComponent(null, null) })
+      return <NgbModalRef> ({ componentInstance: new CrearConductorComponent(null, null) });
     });
     component.registrarConductor();
     // Verify that the dialog was opened
@@ -57,7 +57,7 @@ describe('ConductorComponent', () => {
     // Spy on and fake the open function
     spyOn(modalService, 'open').and.callFake(() => {
       // Call the beforeDismiss function to close the dialog
-      return <NgbModalRef>({ componentInstance: new CrearConductorComponent(null, null) })
+      return <NgbModalRef> ({ componentInstance: new CrearConductorComponent(null, null) });
     });
     component.consultarConductor();
     // Verify that the dialog was opened

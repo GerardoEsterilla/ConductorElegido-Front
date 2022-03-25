@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./borrar-cliente.component.css']
 })
 
-export class BorrarClienteComponent implements OnInit { 
+export class BorrarClienteComponent implements OnInit {
 
 
   constructor() { }
